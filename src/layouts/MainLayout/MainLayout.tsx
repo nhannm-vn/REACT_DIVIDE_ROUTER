@@ -21,7 +21,11 @@ export default function MainLayout({ children }: Props) {
                   return `flex items-center rounded-lg  p-2 text-base ${activeClass} font-normal text-gray-900 hover:bg-gray-300`
                 }}
               >
-                <span className='ml-3 font-bold'>Dashboard</span>
+                {/* Dùng actived cho children của NavLink */}
+                {/* skill render props */}
+                {({ isActive }) => {
+                  return <span className={`ml-3 ${isActive ? 'font-bold' : ''}`}>Dashboard</span>
+                }}
               </NavLink>
             </li>
             <li>
@@ -33,7 +37,10 @@ export default function MainLayout({ children }: Props) {
                   return `flex items-center rounded-lg p-2 text-base ${activeClass} font-normal text-gray-900 hover:bg-gray-300`
                 }}
               >
-                <span className='ml-3'>Staff</span>
+                {/* Dùng actived cho children của NavLink */}
+                {({ isActive }) => {
+                  return <span className={`ml-3 ${isActive ? 'font-bold' : ''}`}>Staff</span>
+                }}
               </NavLink>
             </li>
             <li>
@@ -45,7 +52,10 @@ export default function MainLayout({ children }: Props) {
                   return `flex items-center rounded-lg p-2 text-base ${activeClass} font-normal text-gray-900 hover:bg-gray-300`
                 }}
               >
-                <span className='ml-3'>About</span>
+                {/* Dùng actived cho children của NavLink */}
+                {({ isActive }) => {
+                  return <span className={`ml-3 ${isActive ? 'font-bold' : ''}`}>Staff</span>
+                }}
               </NavLink>
             </li>
           </ul>
@@ -63,4 +73,7 @@ export default function MainLayout({ children }: Props) {
 
 /**
  * thẻ a bây giờ sẽ thay bằng NavLink và prop "to" sẽ đưa mình đến nới mà mình muốn đến
+ * đối với NavLink thì className có thể nhận vào callback. Nghĩa là tùy thuộc trạng thái actived
+ * mà hiển thị các giá trị. Nói cách khác className có thể chứa cái callBack trong đó
+ * **Đặc biệt ngoài className thì chúng ta còn có thể áp dụng kỹ thuật trên cho style để đánh css hoặc scss
  */
