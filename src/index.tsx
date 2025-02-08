@@ -18,6 +18,11 @@ root.render(
   </React.StrictMode>
 )
 
+/**
+ * Ở đây thì mình dùng BrowserRouter tuy nhiên vẫn còn nhiều loại router khác
+ * ví dụ như HashRouter, MemoryRouter. Ngoài ra còn có StaticRouter import hơi khó tí
+ */
+
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
