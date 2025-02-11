@@ -54,7 +54,7 @@ export default function MainLayout({ children }: Props) {
               >
                 {/* Dùng actived cho children của NavLink */}
                 {({ isActive }) => {
-                  return <span className={`ml-3 ${isActive ? 'font-bold' : ''}`}>Staff</span>
+                  return <span className={`ml-3 ${isActive ? 'font-bold' : ''}`}>About</span>
                 }}
               </NavLink>
             </li>
