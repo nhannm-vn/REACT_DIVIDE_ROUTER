@@ -1,3 +1,4 @@
+import AddStaff from 'components/AddStaff'
 import StaffItem from 'components/StaffItem'
 import MainLayout from 'layouts/MainLayout'
 import About from 'pages/About'
@@ -12,6 +13,10 @@ import { Route, Routes } from 'react-router-dom'
 
 // Dynamic Route với id nó sẽ giúp cho việc truy cập vào từng staff cụ thể
 
+// staff/add nó match với thằng staff/:id
+//Câu hỏi đặt ra là tại sao nó biết được là add mà không phải :id
+//==> do từ version 6 này nó sẽ tự động biết đc. Trước version 6 thì phải đặt theo tuần tự ưu tiên
+
 function App() {
   return (
     <div className='App'>
@@ -21,6 +26,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/staff' element={<StaffList />} />
           <Route path='/staff/:id' element={<StaffItem />} />
+          <Route path='/staff/add' element={<AddStaff />} />
         </Routes>
       </MainLayout>
     </div>

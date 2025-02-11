@@ -45,6 +45,9 @@ export default function StaffList() {
         </li>
       </ul>
       {/* <AddStaff /> */}
+      <Link to='/staff/add' className='font-medium text-blue-600 hover:underline dark:text-blue-500'>
+        Add Staff
+      </Link>
     </div>
   )
 }
