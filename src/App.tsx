@@ -1,3 +1,4 @@
+import StaffItem from 'components/StaffItem'
 import MainLayout from 'layouts/MainLayout'
 import About from 'pages/About'
 import Dashboard from 'pages/Dashboard'
@@ -9,6 +10,8 @@ import { Route, Routes } from 'react-router-dom'
 
 // Việc này giúp cho đường dẫn ở đâu thì render ra nội dung đó
 
+// Dynamic Route với id nó sẽ giúp cho việc truy cập vào từng staff cụ thể
+
 function App() {
   return (
     <div className='App'>
@@ -17,6 +20,7 @@ function App() {
           <Route path='/' element={<Dashboard />} />
           <Route path='/about' element={<About />} />
           <Route path='/staff' element={<StaffList />} />
+          <Route path='/staff/:id' element={<StaffItem />} />
         </Routes>
       </MainLayout>
     </div>
