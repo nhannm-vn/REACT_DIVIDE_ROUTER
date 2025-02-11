@@ -28,9 +28,14 @@ function App() {
         <Routes>
           <Route path='/' element={<Dashboard />} />
           <Route path='/about' element={<About />} />
-          <Route path='/staff' element={<Staff />} />
+          {/* <Route path='/staff' element={<Staff />} />
           <Route path='/staff/:id' element={<StaffItem />} />
-          <Route path='/staff/add' element={<AddStaff />} />
+          <Route path='/staff/add' element={<AddStaff />} /> */}
+          {/* Nested route */}
+          <Route path='/staff' element={<Staff />}>
+            <Route path=':id' element={<StaffItem />} />
+            <Route path='add' element={<AddStaff />} />
+          </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>
       </MainLayout>
