@@ -1,11 +1,12 @@
 import AddStaff from 'components/AddStaff'
+import StaffList from 'components/StaffList/StaffList'
 import { Link } from 'react-router-dom'
 
 export default function Staff() {
   return (
     <div>
       <h1 className='mb-6 text-lg'>Staff List</h1>
-      {/* <div className='border-b border-gray-200 text-center text-sm font-medium text-gray-500  '>
+      <div className='border-b border-gray-200 text-center text-sm font-medium text-gray-500  '>
         <ul className='-mb-px flex flex-wrap'>
           <li className='mr-2'>
             <a
@@ -25,29 +26,11 @@ export default function Staff() {
             </a>
           </li>
         </ul>
-      </div> */}
+      </div>
 
-      <ul>
-        <li>
-          <Link to='/staff/1' className='font-medium text-blue-600 hover:underline dark:text-blue-500'>
-            Staff 1
-          </Link>
-        </li>
-        <li>
-          <Link to='/staff/2' className='font-medium text-blue-600 hover:underline dark:text-blue-500'>
-            Staff 2
-          </Link>
-        </li>
-        <li>
-          <Link to='/staff/3' className='font-medium text-blue-600 hover:underline dark:text-blue-500'>
-            Staff 3
-          </Link>
-        </li>
-      </ul>
+      <StaffList />
+
       {/* <AddStaff /> */}
-      <Link to='/staff/add' className='font-medium text-blue-600 hover:underline dark:text-blue-500'>
-        Add Staff
-      </Link>
     </div>
   )
 }
