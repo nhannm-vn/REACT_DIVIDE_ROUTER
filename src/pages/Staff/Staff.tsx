@@ -1,7 +1,7 @@
 import AddStaff from 'components/AddStaff'
 import { Link } from 'react-router-dom'
 
-export default function StaffList() {
+export default function Staff() {
   return (
     <div>
       <h1 className='mb-6 text-lg'>Staff List</h1>

@@ -4,7 +4,7 @@ import MainLayout from 'layouts/MainLayout'
 import About from 'pages/About'
 import Dashboard from 'pages/Dashboard'
 import NotFound from 'pages/NotFound'
-import StaffList from 'pages/StaffList'
+import Staff from 'pages/Staff'
 import { Route, Routes } from 'react-router-dom'
 
 // Mình muốn khi bấm vào tới đâu thì đuôi sẽ thay đổi và đồng thời
@@ -19,6 +19,8 @@ import { Route, Routes } from 'react-router-dom'
 //==> do từ version 6 này nó sẽ tự động biết đc. Trước version 6 thì phải đặt theo tuần tự ưu tiên
 
 // đường dẫn là "*" nghĩa là các đường dẫn còn lại thì hiện lên page 404
+
+//Nested route hay còn gọi là route trong route
 function App() {
   return (
     <div className='App'>
@@ -26,7 +28,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Dashboard />} />
           <Route path='/about' element={<About />} />
-          <Route path='/staff' element={<StaffList />} />
+          <Route path='/staff' element={<Staff />} />
           <Route path='/staff/:id' element={<StaffItem />} />
           <Route path='/staff/add' element={<AddStaff />} />
           <Route path='*' element={<NotFound />} />
