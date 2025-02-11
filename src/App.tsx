@@ -36,7 +36,8 @@ function App() {
           <Route path='/staff' element={<Staff />}>
             <Route path=':id' element={<StaffItem />} />
             <Route path='add' element={<AddStaff />} />
-            <Route path='list' element={<StaffList />} />
+            {/* index giúp cho vào thằng trang đó luôn nghĩa là với staff thì cũng hiển thị component đó ra luôn */}
+            <Route index element={<StaffList />} />
           </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>

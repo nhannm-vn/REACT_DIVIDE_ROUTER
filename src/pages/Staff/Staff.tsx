@@ -8,7 +8,10 @@ export default function Staff() {
         <ul className='-mb-px flex flex-wrap'>
           <li className='mr-2'>
             <NavLink
-              to='/staff/list'
+              to='/staff'
+              // end làm cho thằng nào là thằng con thì actived và thằng cho thì không
+              //nghĩa là chỉ có 1 trong 2 actived
+              end
               className={({ isActive }) => {
                 return `inline-block rounded-t-lg border-b-2 border-transparent p-4 ${
                   isActive
