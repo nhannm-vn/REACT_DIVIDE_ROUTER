@@ -33,12 +33,7 @@ function App() {
           <Route path='/staff/:id' element={<StaffItem />} />
           <Route path='/staff/add' element={<AddStaff />} /> */}
           {/* Nested route */}
-          <Route path='/staff' element={<Staff />}>
-            <Route path=':id' element={<StaffItem />} />
-            <Route path='add' element={<AddStaff />} />
-            {/* index giúp cho vào thằng trang đó luôn nghĩa là với staff thì cũng hiển thị component đó ra luôn */}
-            <Route index element={<StaffList />} />
-          </Route>
+          <Route path='/staff/*' element={<Staff />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </MainLayout>

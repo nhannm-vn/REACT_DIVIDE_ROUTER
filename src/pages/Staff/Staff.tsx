@@ -1,4 +1,7 @@
-import { NavLink, Outlet } from 'react-router-dom'
+import AddStaff from 'components/AddStaff'
+import StaffItem from 'components/StaffItem'
+import StaffList from 'components/StaffList'
+import { NavLink, Outlet, Route, Routes } from 'react-router-dom'
 
 export default function Staff() {
   return (
@@ -40,6 +43,14 @@ export default function Staff() {
           </li>
         </ul>
       </div>
+
+      <Routes>
+        <Route path=':id' element={<StaffItem />} />
+        <Route path='add' element={<AddStaff />} />
+        {/* index giúp cho vào thằng trang đó luôn nghĩa là với staff thì cũng hiển thị component đó ra luôn */}
+        <Route index element={<StaffList />} />
+      </Routes>
+
       {/* Này giúp hiển thị cho nested route hiển thị các children của route cha*/}
       <Outlet context={{ profile: { name: 'Nhan' } }} />
       {/* Những cái nội dung này sẽ nhận ở các component tương ứng thông qua hook */}
