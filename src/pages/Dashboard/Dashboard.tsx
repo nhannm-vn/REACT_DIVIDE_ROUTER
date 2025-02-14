@@ -7,6 +7,7 @@ export default function Dashboard() {
   return (
     <div>
       <h1 className='mb-6 text-lg'>Dashboard</h1>
+      <p className='text-cyan-800'>{location.state}</p>
     </div>
   )
 }
