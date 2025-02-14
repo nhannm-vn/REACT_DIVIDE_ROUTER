@@ -1,9 +1,17 @@
 import React from 'react'
-import { NavLink, Route, Routes } from 'react-router-dom'
+import { NavLink, Route, Routes, useLocation } from 'react-router-dom'
 
 interface Props {
   children?: React.ReactNode
 }
+
+const ExtraContent = () => {
+  // Muỗn log được location thì dùng hook có tên useLocation
+  const location = useLocation()
+  console.log(location)
+  return <div className='text-red-800'>Url is /about</div>
+}
+
 export default function MainLayout({ children }: Props) {
   return (
     <div className='grid min-h-screen grid-cols-4'>
@@ -59,8 +67,8 @@ export default function MainLayout({ children }: Props) {
               </NavLink>
             </li>
           </ul>
-          <Routes>
-            <Route path='/about' element={<div>Url is /about</div>} />
+          <Routes location='/about'>
+            <Route path='/about' element={<ExtraContent />} />
           </Routes>
         </div>
       </aside>
