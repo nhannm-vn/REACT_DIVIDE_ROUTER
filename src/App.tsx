@@ -6,7 +6,7 @@ import About from 'pages/About'
 import Dashboard from 'pages/Dashboard'
 import NotFound from 'pages/NotFound'
 import Staff from 'pages/Staff'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useRoutes } from 'react-router-dom'
 
 // Mình muốn khi bấm vào tới đâu thì đuôi sẽ thay đổi và đồng thời
 //render ra trang khác ==> xài Routes và chia ra các route khác nhau
@@ -23,19 +23,44 @@ import { Route, Routes } from 'react-router-dom'
 
 //Nested route hay còn gọi là route trong route
 function App() {
+  const elements = useRoutes([
+    {
+      path: '/',
+      element: <Dashboard />
+    },
+    {
+      path: '/about',
+      element: <About />
+      // children: [
+      //   {
+      //     path: ,
+      //     element: ,
+      //   }
+      // ]
+    },
+    {
+      path: '/staff/*',
+      element: <Staff />
+    },
+    {
+      path: '*',
+      element: <NotFound />
+    }
+  ])
+
   return (
     <div className='App'>
       <MainLayout>
-        <Routes>
+        {/* Cách 1 */}
+        {elements}
+
+        {/* Cách 2 */}
+        {/* <Routes>
           <Route path='/' element={<Dashboard />} />
           <Route path='/about' element={<About />} />
-          {/* <Route path='/staff' element={<Staff />} />
-          <Route path='/staff/:id' element={<StaffItem />} />
-          <Route path='/staff/add' element={<AddStaff />} /> */}
-          {/* Nested route */}
           <Route path='/staff/*' element={<Staff />} />
           <Route path='*' element={<NotFound />} />
-        </Routes>
+        </Routes> */}
       </MainLayout>
     </div>
   )
