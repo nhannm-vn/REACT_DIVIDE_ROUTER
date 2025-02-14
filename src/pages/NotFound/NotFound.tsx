@@ -12,7 +12,9 @@ function NotFound() {
   const navigate = useNavigate()
   useEffect(() => {
     setTimeout(() => {
-      navigate(-1)
+      navigate('/', {
+        state: 'Redirect from notfound'
+      })
     }, 2000)
   }, [navigate])
   return <div>Not Found</div>
