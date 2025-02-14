@@ -51,8 +51,10 @@ export default function Staff() {
         <Route index element={<StaffList />} />
       </Routes>
 
+      {/* Lưu ý nếu như xài cách trên thì Outlet sẽ không còn hiệu nghiệm nữa. Và cũng như không truyền vô được context */}
+
       {/* Này giúp hiển thị cho nested route hiển thị các children của route cha*/}
-      <Outlet context={{ profile: { name: 'Nhan' } }} />
+      {/* <Outlet context={{ profile: { name: 'Nhan' } }} /> */}
       {/* Những cái nội dung này sẽ nhận ở các component tương ứng thông qua hook */}
     </div>
   )
