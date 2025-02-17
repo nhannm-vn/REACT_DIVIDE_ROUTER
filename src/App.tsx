@@ -6,7 +6,8 @@ import About from 'pages/About'
 import Dashboard from 'pages/Dashboard'
 import NotFound from 'pages/NotFound'
 import Staff from 'pages/Staff'
-import { Route, Routes, useRoutes, useLocation } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Route, Routes, useRoutes, useLocation, useSearchParams } from 'react-router-dom'
 
 // Mình muốn khi bấm vào tới đâu thì đuôi sẽ thay đổi và đồng thời
 //render ra trang khác ==> xài Routes và chia ra các route khác nhau
@@ -51,6 +52,19 @@ function App() {
   // log cái location ra (nghĩa là đường dẫn)
   const location = useLocation()
   console.log(location)
+  // Hook naỳ giúp lấy các đường dẫn có query đặc biệt
+  const [searchParams] = useSearchParams()
+
+  // Khi cái param mà thay đổi thì mình sẽ làm cái gì đó
+  // ***còn một cách nữa là mình sẽ sử dụng query-string
+  useEffect(() => {
+    console.log('searchParams', Object.fromEntries([...searchParams]))
+  }, [searchParams])
+
+  // Khi loaction thay đổi thì log ra
+  // useEffect(() => {
+  //   console.log('location', location)
+  // }, [location])
 
   return (
     <div className='App'>
