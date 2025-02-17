@@ -6,7 +6,7 @@ import About from 'pages/About'
 import Dashboard from 'pages/Dashboard'
 import NotFound from 'pages/NotFound'
 import Staff from 'pages/Staff'
-import { Route, Routes, useRoutes } from 'react-router-dom'
+import { Route, Routes, useRoutes, useLocation } from 'react-router-dom'
 
 // Mình muốn khi bấm vào tới đâu thì đuôi sẽ thay đổi và đồng thời
 //render ra trang khác ==> xài Routes và chia ra các route khác nhau
@@ -47,6 +47,10 @@ function App() {
       element: <NotFound />
     }
   ])
+
+  // log cái location ra (nghĩa là đường dẫn)
+  const location = useLocation()
+  console.log(location)
 
   return (
     <div className='App'>

@@ -67,9 +67,10 @@ export default function MainLayout({ children }: Props) {
               </NavLink>
             </li>
           </ul>
-          <Routes location='/about'>
+          {/* ở đây nếu mà mình fix cứng location thì tất cả các route con ở trong để có location là "/about" */}
+          {/* <Routes location='/about'>
             <Route path='/about' element={<ExtraContent />} />
-          </Routes>
+          </Routes> */}
         </div>
       </aside>
       <main className='col-span-3 h-full py-4 px-3'>{children}</main>
